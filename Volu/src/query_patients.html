@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Query Example Page</title>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
+    <script type="text/javascript" defer>
+        (function() {
+            var firebaseConfig = {
+                apiKey: "AIzaSyDGPeD5wV5FThb0mO0n6jcYvruF9XwmYQ0",
+                authDomain: "volu-30e9a.firebaseapp.com",
+                projectId: "volu-30e9a",
+                storageBucket: "volu-30e9a.appspot.com",
+                messagingSenderId: "12096235857",
+                appId: "1:12096235857:web:3028849510b190243acb70",
+                measurementId: "G-BZG3RK5ZS1"
+            };
+    
+            firebase.initializeApp(firebaseConfig);
+        })();
+
+        var read_from_firebase = function(data){
+            var db = firebase.firestore();
+            var itemsDiv = document.getElementById("items-div");
+            db.collection("patients").get().then((querySnapshot) => {
+            // Loop through each item in the query result
+            querySnapshot.forEach((doc) => {
+                // Get the data for the current item
+                var patient = doc.data();
+                console.log("patient: ", patient);
+                
+                // Create an HTML element to display the item
+                var itemDiv = document.createElement("div");
+                console.log("name: ", patient.fullName);
+                console.log("age: ", 2023 - Number(patient.yearOfBirth));
+
+                itemDiv.innerHTML = "Patient Name: " + patient.fullName + ", Patient Age in years: " + String(2023 - Number(patient.yearOfBirth));
+                console.log(itemDiv);
+                // Add the HTML element to the items div
+                itemsDiv.appendChild(itemDiv);
+            });
+        });
+        }
+        window.onload = function() {
+            read_from_firebase();
+        }
+</script>
+</head>
+  <body>
+    <div id="items-div"></div>
+  </body>

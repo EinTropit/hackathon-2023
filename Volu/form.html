@@ -13,6 +13,10 @@
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
+        <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-firestore.js"></script>
+        
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
@@ -57,7 +61,7 @@
                           <h1>Patient's Sign Up </h1>
                             <hr>
                             <label for="text">Name:</label>
-                            <input type="text" placeholder="Enter Name" name="name" required>
+                            <input id="fullName" type="text" placeholder="Enter Name" name="name" required>
                             <label for="yearOfBirth">Year of birth:</label>
                             <select name="years" id="yearOfBirth">
                                 <option value="2000">2000</option>
@@ -89,7 +93,6 @@
                               <option value="Dana">Dana Hospital</option>
                               <option value="Meyer">Meyer Hospital</option>
                             </select>
-                            <!-- <input type="submit" value="Submit"> -->
                           </form>
                         <br>
                         <h5>Please check your hobbies, or things you would like to learn.</h5>
@@ -99,10 +102,10 @@
                         <label for="sportsCheckbox"><h6>Sports</h6></label>
                         <br>
                         <div id="sportsOptions" style="display: none;">
-                          <label><input type="checkbox" name="hobby" value="Basketball">Basketball</label>
-                          <label><input type="checkbox" name="hobby" value="Soccer">Soccer</label>
-                          <label><input type="checkbox" name="hobby" value="Tennis">Tennis</label>
-                          <label><input type="checkbox" name="hobby" value="Gym">Gym</label>
+                          <label><input type="checkbox" id="Basketball" name="hobby" value="Basketball">Basketball</label>
+                          <label><input type="checkbox" id="Soccer" name="hobby" value="Soccer">Soccer</label>
+                          <label><input type="checkbox" id="Tennis" name="hobby" value="Tennis">Tennis</label>
+                          <label><input type="checkbox" id="Gym" name="hobby" value="Gym">Gym</label>
                         </div>
                       
                         
@@ -110,72 +113,72 @@
                         <label for="videoGamesCheckbox"><h6>Video Games</h6></label>
                         <br>
                         <div id="videoGamesOptions" style="display: none;">
-                          <label><input type="checkbox" name="hobby" value="Action">Action</label>
-                          <label><input type="checkbox" name="hobby" value="Adventure">Adventure</label>
-                          <label><input type="checkbox" name="hobby" value="Simulation">Simulation</label>
-                          <label><input type="checkbox" name="hobby" value="Strategy">Strategy</label>
+                          <label><input type="checkbox" id="Action" name="hobby" value="Action">Action</label>
+                          <label><input type="checkbox" id="Adventure" name="hobby" value="Adventure">Adventure</label>
+                          <label><input type="checkbox" id="Simulation" name="hobby" value="Simulation">Simulation</label>
+                          <label><input type="checkbox" id="Strategy" name="hobby" value="Strategy">Strategy</label>
                         </div>
                       
                         <input type="checkbox" id="musicCheckbox" name="hobbyCategory" value="Playing Music" onchange="showHobbyOptions('musicOptions')">
                         <label for="musicCheckbox"><h6>Playing Music</h6></label>
                         <br>
                         <div id="musicOptions" style="display: none;">
-                          <label><input type="checkbox" name="hobby" value="Guitar">Guitar</label>
-                          <label><input type="checkbox" name="hobby" value="Piano">Piano</label>
-                          <label><input type="checkbox" name="hobby" value="Drums">Drums</label>
-                          <label><input type="checkbox" name="hobby" value="Singing">Singing</label>
+                          <label><input type="checkbox" id="Guitar" name="hobby" value="Guitar">Guitar</label>
+                          <label><input type="checkbox" id="Piano" name="hobby" value="Piano">Piano</label>
+                          <label><input type="checkbox" id="Drums" name="hobby" value="Drums">Drums</label>
+                          <label><input type="checkbox" id="Singing" name="hobby" value="Singing">Singing</label>
                         </div>
                       
                         <input type="checkbox" id="readingCheckbox" name="hobbyCategory" value="Reading" onchange="showHobbyOptions('readingOptions')">
                         <label for="readingCheckbox"><h6>Reading</h6></label>
                         <br>
                         <div id="readingOptions" style="display: none;">
-                          <label><input type="checkbox" name="hobby" value="Fiction">Fiction</label>
-                          <label><input type="checkbox" name="hobby" value="Non-fiction">Non-fiction</label>
-                          <label><input type="checkbox" name="hobby" value="Comics">Comics</label>
-                          <label><input type="checkbox" name="hobby" value="Mystery">Mystery</label>
+                          <label><input type="checkbox" id="Fiction" name="hobby" value="Fiction">Fiction</label>
+                          <label><input type="checkbox" id="NonFiction" name="hobby" value="Non-fiction">Non-fiction</label>
+                          <label><input type="checkbox" id="Comics" name="hobby" value="Comics">Comics</label>
+                          <label><input type="checkbox" id="Mystery" name="hobby" value="Mystery">Mystery</label>
                         </div>
                       
                         <input type="checkbox" id="boardGamesCheckbox" name="hobbyCategory" value="Board Games" onchange="showHobbyOptions('boardGamesOptions')">
                         <label for="boardGamesCheckbox"><h6>Board Games</h6></label>
                         <br>
                         <div id="boardGamesOptions" style="display: none;">
-                          <label><input type="checkbox" name="hobby" value="Monopoly">Monopoly</label>
-                          <label><input type="checkbox" name="hobby" value="Chess">Chess</label>
-                          <label><input type="checkbox" name="hobby" value="Settlers of Catan">Settlers of Catan</label>
+                          <label><input type="checkbox" id="Monopoly" name="hobby" value="Monopoly">Monopoly</label>
+                          <label><input type="checkbox" id="Chess" name="hobby" value="Chess">Chess</label>
+                          <label><input type="checkbox" id="SettlersOfCatan" name="hobby" value="Settlers of Catan">Settlers of Catan</label>
                         </div>
                       
                         <input type="checkbox" id="magicCheckbox" name="hobbyCategory" value="Magic" onchange="showHobbyOptions('magicOptions')">
                         <label for="magicCheckbox"><h6>Magic</h6></label>
                         <br>
                         <div id="magicOptions" style="display: none;">
-                          <label><input type="checkbox" name="hobby" value="Card Tricks">Card Tricks</label>
-                          <label><input type="checkbox" name="hobby" value="Coin Tricks">Coin Tricks</label>
-                          <label><input type="checkbox" name="hobby" value="Mentalism">Mentalism</label>
-                          <label><input type="checkbox" name="hobby" value="Illusions">Illusions</label>
+                          <label><input type="checkbox" id="CardTricks" name="hobby" value="Card Tricks">Card Tricks</label>
+                          <label><input type="checkbox" id="CoinTricks" name="hobby" value="Coin Tricks">Coin Tricks</label>
+                          <label><input type="checkbox" id="Mentalism" name="hobby" value="Mentalism">Mentalism</label>
+                          <label><input type="checkbox" id="Illusions" name="hobby" value="Illusions">Illusions</label>
                         </div>
                       
                         <input type="checkbox" id="cookingCheckbox" name="hobbyCategory" value="Cooking" onchange="showHobbyOptions('cookingOptions')">
                         <label for="cookingCheckbox"><h6>Cooking</h6></label>
                         <br>
                         <div id="cookingOptions" style="display: none;">
-                          <label><input type="checkbox" name="hobby" value="Baking">Baking</label>
-                          <label><input type="checkbox" name="hobby" value="Grilling">Grilling</label>
-                          <label><input type="checkbox" name="hobby" value="Sous Vide">Sous Vide</label>
-                          <label><input type="checkbox" name="hobby" value="Ethnic Cuisine">Ethnic Cuisine</label>
+                          <label><input type="checkbox" id="Baking" name="hobby" value="Baking">Baking</label>
+                          <label><input type="checkbox" id="Grilling" name="hobby" value="Grilling">Grilling</label>
+                          <label><input type="checkbox" id="SousVide" name="hobby" value="Sous Vide">Sous Vide</label>
+                          <label><input type="checkbox" id="EthnicCuisine" name="hobby" value="Ethnic Cuisine">Ethnic Cuisine</label>
                         </div>
                       
                         <input type="checkbox" id="scienceCheckbox" name="hobbyCategory" value="Science" onchange="showHobbyOptions('scienceOptions')">
                         <label for="scienceCheckbox"><h6>Science</h6></label>
                         <br>
                         <div id="scienceOptions" style="display: none;">
-                          <label><input type="checkbox" name="hobby" value="Astronomy">Astronomy</label>
-                          <label><input type="checkbox" name="hobby" value="Biology">Biology</label>
-                          <label><input type="checkbox" name="hobby" value="Chemistry">Chemistry</label>
-                          <label><input type="checkbox" name="hobby" value="Physics">Physics</label>
+                          <label><input type="checkbox" id="Astronomy" name="hobby" value="Astronomy">Astronomy</label>
+                          <label><input type="checkbox" id="Biology" name="hobby" value="Biology">Biology</label>
+                          <label><input type="checkbox" id="Chemistry" name="hobby" value="Chemistry">Chemistry</label>
+                          <label><input type="checkbox" id="Physics" name="hobby" value="Physics">Physics</label>
                         </div>
 <hr>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button id="submit" type="submit" class="btn btn-primary">Submit</button>
                   </form>
               </div>
           </div>

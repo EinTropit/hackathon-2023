@@ -66,44 +66,47 @@
                 <div class="text-center">
                     <form id="hobbiesForm">
                         <form id="myForm" onsubmit="return validateForm()">
-                          <h1>Patient's Sign Up </h1>
+                          <h1>הכנסת פרטים </h1>
+                          <h2> מלא בבקשה את הפרטים על ילדיך</h2>
                             <hr>
-                            <label for="text">Name:</label>
-                            <input id="fullName" type="text" placeholder="Enter Name" name="name" required>
-                            <label for="yearOfBirth">Year of birth:</label>
+                            <label for="text">:שם מלא</label>
+                            <input id="fullName" type="text" dir= "rtl" placeholder="הכנס שם" name="name" required>
+                            <label for="yearOfBirth">:שנת לידה</label>
                             <select name="years" id="yearOfBirth">
-                                <option value="1990">1990</option> 
-                                <option value="1991">1991</option>
-                                <option value="1992">1992</option>
-                                <option value="1993">1993</option>
-                                <option value="1994">1994</option>
-                                <option value="1995">1995</option>
-                                <option value="1996">1996</option>
-                                <option value="1997">1997</option>
-                                <option value="1998">1998</option>
-                                <option value="1999">1999</option>
-                                <option value="2000">2000</option>
-                                <option value="2001">2001</option>
-                                <option value="2002">2002</option>
-                                <option value="2003">2003</option>
-                                <option value="2004">2004</option>
-                                <option value="2005">2005</option>
-                                <option value="2006">2006</option>
-                                <option value="2007">2007</option>
-                                <option value="2008">2008</option>
-                                <option value="2009">2009</option>
-                                <option value="2010">2010</option>
+                               <option value="chooseyear" dir="rtl">בחר</option> 
+                                <option value="1990" dir="rtl">1990</option> 
+                                <option value="1991" dir="rtl">1991</option>
+                                <option value="1992" dir="rtl">1992</option>
+                                <option value="1993" dir="rtl">1993</option>
+                                <option value="1994" dir="rtl">1994</option>
+                                <option value="1995" dir="rtl">1995</option>
+                                <option value="1996" dir="rtl">1996</option>
+                                <option value="1997" dir="rtl">1997</option>
+                                <option value="1998" dir="rtl">1998</option>
+                                <option value="1999" dir="rtl">1999</option>
+                                <option value="2000" dir="rtl">2000</option>
+                                <option value="2001" dir="rtl">2001</option>
+                                <option value="2002" dir="rtl">2002</option>
+                                <option value="2003" dir="rtl">2003</option>
+                                <option value="2004" dir="rtl">2004</option>
+                                <option value="2005" dir="rtl">2005</option>
+                                <option value="2006" dir="rtl">2006</option>
+                                <option value="2007" dir="rtl">2007</option>
+                                <option value="2008" dir="rtl">2008</option>
+                                <option value="2009" dir="rtl">2009</option>
+                                <option value="2010" dir="rtl">2010</option>
                               </select>
-                            <label for="current-hospital">Current Hospital:</label>
+                            <label for="current-hospital">:בית חולים נוכחי</label>
                             <select id="current-hospital" name="current-hospital">
-                                <option value="Ruth">Ruth Hospital</option>
-                                <option value="Schnieder">Schneider Hospital</option>
-                              <option value="Dana">Dana Hospital</option>
-                              <option value="Meyer">Meyer Hospital</option>
+                              <option dir="rtl" value="Ruth">בחר</option>
+                                <option dir="rtl" value="Ruth">בית חולים רות</option>
+                                <option dir="rtl" value="Schnieder">בית חולים שניידר</option>
+                              <option dir="rtl" value="Dana">בית חולים דנה</option>
+                              <option dir="rtl" value="Meyer">בית חולים מאייר</option>
                             </select>
                           </form>
                         <br>
-                        <h5>Please check your hobbies, or things you would like to learn.</h5>
+                        <h5>אנא הכנס בבקשה את התחביבים של הבן שלך</h5>
                       
                         
                         <input type="checkbox" id="sportsCheckbox" name="hobbyCategory" value="Sports" onchange="showHobbyOptions('sportsOptions')">

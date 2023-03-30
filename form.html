@@ -19,6 +19,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <script src="js/forms.js"></script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -49,7 +50,7 @@
             </div>
         </header>
         <!-- Services-->
-        <section class="page-section" id="services">
+        < class="page-section" id="services">
             <div class="container" dir="ltr">
                 <div class="text-center">
                     <form id="hobbiesForm">
@@ -91,11 +92,11 @@
                             <!-- <input type="submit" value="Submit"> -->
                           </form>
                         <br>
-                        <h6>Hobbies</h6>
+                        <h5>Please check your hobbies, or things you would like to learn.</h5>
                       
                         
                         <input type="checkbox" id="sportsCheckbox" name="hobbyCategory" value="Sports" onchange="showHobbyOptions('sportsOptions')">
-                        <label for="sportsCheckbox">Sports</label>
+                        <label for="sportsCheckbox"><h6>Sports</h6></label>
                         <br>
                         <div id="sportsOptions" style="display: none;">
                           <label><input type="checkbox" name="hobby" value="Basketball">Basketball</label>
@@ -106,7 +107,7 @@
                       
                         
                         <input type="checkbox" id="videoGamesCheckbox" name="hobbyCategory" value="Video Games" onchange="showHobbyOptions('videoGamesOptions')">
-                        <label for="videoGamesCheckbox">Video Games</label>
+                        <label for="videoGamesCheckbox"><h6>Video Games</h6></label>
                         <br>
                         <div id="videoGamesOptions" style="display: none;">
                           <label><input type="checkbox" name="hobby" value="Action">Action</label>
@@ -116,7 +117,7 @@
                         </div>
                       
                         <input type="checkbox" id="musicCheckbox" name="hobbyCategory" value="Playing Music" onchange="showHobbyOptions('musicOptions')">
-                        <label for="musicCheckbox">Playing Music</label>
+                        <label for="musicCheckbox"><h6>Playing Music</h6></label>
                         <br>
                         <div id="musicOptions" style="display: none;">
                           <label><input type="checkbox" name="hobby" value="Guitar">Guitar</label>
@@ -126,7 +127,7 @@
                         </div>
                       
                         <input type="checkbox" id="readingCheckbox" name="hobbyCategory" value="Reading" onchange="showHobbyOptions('readingOptions')">
-                        <label for="readingCheckbox">Reading</label>
+                        <label for="readingCheckbox"><h6>Reading</h6></label>
                         <br>
                         <div id="readingOptions" style="display: none;">
                           <label><input type="checkbox" name="hobby" value="Fiction">Fiction</label>
@@ -136,7 +137,7 @@
                         </div>
                       
                         <input type="checkbox" id="boardGamesCheckbox" name="hobbyCategory" value="Board Games" onchange="showHobbyOptions('boardGamesOptions')">
-                        <label for="boardGamesCheckbox">Board Games</label>
+                        <label for="boardGamesCheckbox"><h6>Board Games</h6></label>
                         <br>
                         <div id="boardGamesOptions" style="display: none;">
                           <label><input type="checkbox" name="hobby" value="Monopoly">Monopoly</label>
@@ -145,7 +146,7 @@
                         </div>
                       
                         <input type="checkbox" id="magicCheckbox" name="hobbyCategory" value="Magic" onchange="showHobbyOptions('magicOptions')">
-                        <label for="magicCheckbox">Magic</label>
+                        <label for="magicCheckbox"><h6>Magic</h6></label>
                         <br>
                         <div id="magicOptions" style="display: none;">
                           <label><input type="checkbox" name="hobby" value="Card Tricks">Card Tricks</label>
@@ -155,7 +156,7 @@
                         </div>
                       
                         <input type="checkbox" id="cookingCheckbox" name="hobbyCategory" value="Cooking" onchange="showHobbyOptions('cookingOptions')">
-                        <label for="cookingCheckbox">Cooking</label>
+                        <label for="cookingCheckbox"><h6>Cooking</h6></label>
                         <br>
                         <div id="cookingOptions" style="display: none;">
                           <label><input type="checkbox" name="hobby" value="Baking">Baking</label>
@@ -165,7 +166,7 @@
                         </div>
                       
                         <input type="checkbox" id="scienceCheckbox" name="hobbyCategory" value="Science" onchange="showHobbyOptions('scienceOptions')">
-                        <label for="scienceCheckbox">Science</label>
+                        <label for="scienceCheckbox"><h6>Science</h6></label>
                         <br>
                         <div id="scienceOptions" style="display: none;">
                           <label><input type="checkbox" name="hobby" value="Astronomy">Astronomy</label>
@@ -173,104 +174,10 @@
                           <label><input type="checkbox" name="hobby" value="Chemistry">Chemistry</label>
                           <label><input type="checkbox" name="hobby" value="Physics">Physics</label>
                         </div>
-                      <h6></h6>
-                        <br>
-                      <h6>If you had the chance to learn or do something new, what would you choose?</h6>
-
-                     
-                      <input type="checkbox" id="sportsCheckbox" name="hobbyCategory" value="Sports" onchange="showHobbyOptions('sportsOptions')">
-                      <label for="sportsCheckbox">Sports</label>
-                      <br>
-                      <div id="learnsportsOptions" style="display: none;">
-                        <label><input type="checkbox" name="hobby" value="Basketball">Basketball</label>
-                        <label><input type="checkbox" name="hobby" value="Soccer">Soccer</label>
-                        <label><input type="checkbox" name="hobby" value="Tennis">Tennis</label>
-                        <label><input type="checkbox" name="hobby" value="Gym">Gym</label>
-                      </div>
-                    
-                      
-                      <input type="checkbox" id="videoGamesCheckbox" name="hobbyCategory" value="Video Games" onchange="showHobbyOptions('videoGamesOptions')">
-                      <label for="videoGamesCheckbox">Video Games</label>
-                      <br>
-                      <div id="learnvideoGamesOptions" style="display: none;">
-                        <label><input type="checkbox" name="hobby" value="Action">Action</label>
-                        <label><input type="checkbox" name="hobby" value="Adventure">Adventure</label>
-                        <label><input type="checkbox" name="hobby" value="Simulation">Simulation</label>
-                        <label><input type="checkbox" name="hobby" value="Strategy">Strategy</label>
-                      </div>
-                    
-                      <input type="checkbox" id="musicCheckbox" name="hobbyCategory" value="Playing Music" onchange="showHobbyOptions('musicOptions')">
-                      <label for="musicCheckbox">Playing Music</label>
-                      <br>
-                      <div id="learnmusicOptions" style="display: none;">
-                        <label><input type="checkbox" name="hobby" value="Guitar">Guitar</label>
-                        <label><input type="checkbox" name="hobby" value="Piano">Piano</label>
-                        <label><input type="checkbox" name="hobby" value="Drums">Drums</label>
-                        <label><input type="checkbox" name="hobby" value="Singing">Singing</label>
-                      </div>
-                    
-                      <input type="checkbox" id="readingCheckbox" name="hobbyCategory" value="Reading" onchange="showHobbyOptions('readingOptions')">
-                      <label for="readingCheckbox">Reading</label>
-                      <br>
-                      <div id="learnreadingOptions" style="display: none;">
-                        <label><input type="checkbox" name="hobby" value="Fiction">Fiction</label>
-                        <label><input type="checkbox" name="hobby" value="Non-fiction">Non-fiction</label>
-                        <label><input type="checkbox" name="hobby" value="Comics">Comics</label>
-                        <label><input type="checkbox" name="hobby" value="Mystery">Mystery</label>
-                      </div>
-                    
-                      <input type="checkbox" id="boardGamesCheckbox" name="hobbyCategory" value="Board Games" onchange="showHobbyOptions('boardGamesOptions')">
-                      <label for="boardGamesCheckbox">Board Games</label>
-                      <br>
-                      <div id="learnboardGamesOptions" style="display: none;">
-                        <label><input type="checkbox" name="hobby" value="Monopoly">Monopoly</label>
-                        <label><input type="checkbox" name="hobby" value="Chess">Chess</label>
-                        <label><input type="checkbox" name="hobby" value="Settlers of Catan">Settlers of Catan</label>
-                      </div>
-                    
-                      <input type="checkbox" id="magicCheckbox" name="hobbyCategory" value="Magic" onchange="showHobbyOptions('magicOptions')">
-                      <label for="magicCheckbox">Magic</label>
-                      <br>
-                      <div id="learnmagicOptions" style="display: none;">
-                        <label><input type="checkbox" name="hobby" value="Card Tricks">Card Tricks</label>
-                        <label><input type="checkbox" name="hobby" value="Coin Tricks">Coin Tricks</label>
-                        <label><input type="checkbox" name="hobby" value="Mentalism">Mentalism</label>
-                        <label><input type="checkbox" name="hobby" value="Illusions">Illusions</label>
-                      </div>
-                    
-                      <input type="checkbox" id="cookingCheckbox" name="hobbyCategory" value="Cooking" onchange="showHobbyOptions('cookingOptions')">
-                      <label for="cookingCheckbox">Cooking</label>
-                      <br>
-                      <div id="learncookingOptions" style="display: none;">
-                        <label><input type="checkbox" name="hobby" value="Baking">Baking</label>
-                        <label><input type="checkbox" name="hobby" value="Grilling">Grilling</label>
-                        <label><input type="checkbox" name="hobby" value="Sous Vide">Sous Vide</label>
-                        <label><input type="checkbox" name="hobby" value="Ethnic Cuisine">Ethnic Cuisine</label>
-                      </div>
-                    
-                      <input type="checkbox" id="scienceCheckbox" name="hobbyCategory" value="Science" onchange="showHobbyOptions('scienceOptions')">
-                      <label for="scienceCheckbox">Science</label>
-                      <br>
-                      <div id="learnscienceOptions" style="display: none;">
-                        <label><input type="checkbox" name="hobby" value="Astronomy">Astronomy</label>
-                        <label><input type="checkbox" name="hobby" value="Biology">Biology</label>
-                        <label><input type="checkbox" name="hobby" value="Chemistry">Chemistry</label>
-                        <label><input type="checkbox" name="hobby" value="Physics">Physics</label>
-                      </div>
-                      
-                      
-                      
-                        <hr>
-                        <input type="submit" class="btn btn-primary" value="Submit">
-                      </form>
-
-                </div>
-                <div class="row text-center">
-                    
-                    
-
-                </div>
-            </div>
+                  </form>
+              </div>
+          </div>
+                        
         </section>
         <!-- Clients-->
         <div class="py-5">

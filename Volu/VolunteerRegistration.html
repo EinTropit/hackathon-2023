@@ -1,7 +1,3 @@
-
-
-
-<!-- ---------------------------------------------------------------------------------------- -->
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
     <head>
@@ -9,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Volu Sign Up</title>
+        <title>Registration</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -19,42 +15,50 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-        <script src="js/forms.js"></script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top"><img src="./assets/img/voluntere.webp" class="w-10 h-10" alt="..." /></a>
+                <a class="navbar-brand" href="#page-top"><img src="assets/img/voluntere.webp" class="w-10 h-10"alt="..." /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#services">שירותים</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#services">שירותים</a></li>
                         <li class="nav-item"><a class="nav-link" href="#services">התחבר</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">הירשם</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">עלינו</a></li> <!-- todo: add about us -->
+                        <li class="nav-item"><a class="nav-link" href="form.html">טופס קליטת ילדים</a></li>
+                        <li class="nav-item"><a class="nav-link" href="items.html">טופס דרישת חפצים</a></li>
+                        <li class="nav-item"><a class="nav-link" href="showcase.html">תרמו חפצים</a></li>
+                        <li class="nav-item"><a class="nav-link" href="volunteer.html">תאמו התנדבות</a></li>
+                        <li class="nav-item"><a class="nav-link" href="profile.html">פרופיל מתנדב</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#team">הצוות שלנו</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#contact">צור קשר</a></li>
+                        
+                        <!-- <li class="nav-item"><a class="nav-link" href="#about">עלינו</a></li>  todo: add about us -->
+                        <ul></ul>
+                        <ul></ul>
+                        <ul></ul>
+                        <ul></ul>
+                        <ul></ul>
+                        <ul></ul>
                         <li class="nav-item"><a class="nav-link" href="#team">הצוות שלנו</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">צור קשר</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <!-- Masthead-->
-        <header class="black">
-          <div class="container">
-             <!-- <div class="masthead-heading text-uppercase text-dark">Patient's Sign Up</div>-->
-          </div>
-      </header>
+        
+      
         <!-- Services-->
         <class="page-section" id="services">
-            <div class="container" dir="ltr">
+            <div class="container" dir="rtl">
                 <div class="text-center">
                     <form id="hobbiesForm">
                         <form id="myForm" onsubmit="return validateForm()">
-                          <h1>Patient's Sign Up </h1>
+                          <h1>הרשמת מתנדב</h1>
                             <hr>
                             <label for="text">Name:</label>
                             <input type="text" placeholder="Enter Name" name="name" required>
@@ -82,105 +86,96 @@
                                 <option value="2019">2019</option>
                                 <option value="2020">2020</option>
                               </select>
-                            <label for="current-hospital">Current Hospital:</label>
-                            <select id="current-hospital" name="current-hospital">
-                                <option value="Ruth">Ruth Hospital</option>
-                                <option value="Schnieder">Schneider Hospital</option>
-                              <option value="Dana">Dana Hospital</option>
-                              <option value="Meyer">Meyer Hospital</option>
-                            </select>
-                            <!-- <input type="submit" value="Submit"> -->
-                          </form>
-                        <br>
-                        <h5>Please check your hobbies, or things you would like to learn.</h5>
+
+                            <h5>סמן את התחומים בהם תרצה להתנדב:</h5>
                       
-                        
-                        <input type="checkbox" id="sportsCheckbox" name="hobbyCategory" value="Sports" onchange="showHobbyOptions('sportsOptions')">
-                        <label for="sportsCheckbox"><h6>Sports</h6></label>
                         <br>
-                        <div id="sportsOptions" style="display: none;">
-                          <label><input type="checkbox" name="hobby" value="Basketball">Basketball</label>
-                          <label><input type="checkbox" name="hobby" value="Soccer">Soccer</label>
-                          <label><input type="checkbox" name="hobby" value="Tennis">Tennis</label>
-                          <label><input type="checkbox" name="hobby" value="Gym">Gym</label>
-                        </div>
-                      
-                        
-                        <input type="checkbox" id="videoGamesCheckbox" name="hobbyCategory" value="Video Games" onchange="showHobbyOptions('videoGamesOptions')">
-                        <label for="videoGamesCheckbox"><h6>Video Games</h6></label>
-                        <br>
-                        <div id="videoGamesOptions" style="display: none;">
-                          <label><input type="checkbox" name="hobby" value="Action">Action</label>
-                          <label><input type="checkbox" name="hobby" value="Adventure">Adventure</label>
-                          <label><input type="checkbox" name="hobby" value="Simulation">Simulation</label>
-                          <label><input type="checkbox" name="hobby" value="Strategy">Strategy</label>
-                        </div>
-                      
-                        <input type="checkbox" id="musicCheckbox" name="hobbyCategory" value="Playing Music" onchange="showHobbyOptions('musicOptions')">
-                        <label for="musicCheckbox"><h6>Playing Music</h6></label>
-                        <br>
-                        <div id="musicOptions" style="display: none;">
-                          <label><input type="checkbox" name="hobby" value="Guitar">Guitar</label>
-                          <label><input type="checkbox" name="hobby" value="Piano">Piano</label>
-                          <label><input type="checkbox" name="hobby" value="Drums">Drums</label>
-                          <label><input type="checkbox" name="hobby" value="Singing">Singing</label>
-                        </div>
-                      
-                        <input type="checkbox" id="readingCheckbox" name="hobbyCategory" value="Reading" onchange="showHobbyOptions('readingOptions')">
-                        <label for="readingCheckbox"><h6>Reading</h6></label>
-                        <br>
-                        <div id="readingOptions" style="display: none;">
-                          <label><input type="checkbox" name="hobby" value="Fiction">Fiction</label>
-                          <label><input type="checkbox" name="hobby" value="Non-fiction">Non-fiction</label>
-                          <label><input type="checkbox" name="hobby" value="Comics">Comics</label>
-                          <label><input type="checkbox" name="hobby" value="Mystery">Mystery</label>
-                        </div>
-                      
-                        <input type="checkbox" id="boardGamesCheckbox" name="hobbyCategory" value="Board Games" onchange="showHobbyOptions('boardGamesOptions')">
-                        <label for="boardGamesCheckbox"><h6>Board Games</h6></label>
-                        <br>
-                        <div id="boardGamesOptions" style="display: none;">
-                          <label><input type="checkbox" name="hobby" value="Monopoly">Monopoly</label>
-                          <label><input type="checkbox" name="hobby" value="Chess">Chess</label>
-                          <label><input type="checkbox" name="hobby" value="Settlers of Catan">Settlers of Catan</label>
-                        </div>
-                      
-                        <input type="checkbox" id="magicCheckbox" name="hobbyCategory" value="Magic" onchange="showHobbyOptions('magicOptions')">
-                        <label for="magicCheckbox"><h6>Magic</h6></label>
-                        <br>
-                        <div id="magicOptions" style="display: none;">
-                          <label><input type="checkbox" name="hobby" value="Card Tricks">Card Tricks</label>
-                          <label><input type="checkbox" name="hobby" value="Coin Tricks">Coin Tricks</label>
-                          <label><input type="checkbox" name="hobby" value="Mentalism">Mentalism</label>
-                          <label><input type="checkbox" name="hobby" value="Illusions">Illusions</label>
-                        </div>
-                      
-                        <input type="checkbox" id="cookingCheckbox" name="hobbyCategory" value="Cooking" onchange="showHobbyOptions('cookingOptions')">
-                        <label for="cookingCheckbox"><h6>Cooking</h6></label>
-                        <br>
-                        <div id="cookingOptions" style="display: none;">
-                          <label><input type="checkbox" name="hobby" value="Baking">Baking</label>
-                          <label><input type="checkbox" name="hobby" value="Grilling">Grilling</label>
-                          <label><input type="checkbox" name="hobby" value="Sous Vide">Sous Vide</label>
-                          <label><input type="checkbox" name="hobby" value="Ethnic Cuisine">Ethnic Cuisine</label>
-                        </div>
-                      
-                        <input type="checkbox" id="scienceCheckbox" name="hobbyCategory" value="Science" onchange="showHobbyOptions('scienceOptions')">
-                        <label for="scienceCheckbox"><h6>Science</h6></label>
-                        <br>
-                        <div id="scienceOptions" style="display: none;">
-                          <label><input type="checkbox" name="hobby" value="Astronomy">Astronomy</label>
-                          <label><input type="checkbox" name="hobby" value="Biology">Biology</label>
-                          <label><input type="checkbox" name="hobby" value="Chemistry">Chemistry</label>
-                          <label><input type="checkbox" name="hobby" value="Physics">Physics</label>
-                        </div>
+                            <input type="checkbox" id="sportsCheckbox" name="hobbyCategory" value="Sports" onchange="showHobbyOptions('sportsOptions')">
+                            <label for="sportsCheckbox"><h6>Sports</h6></label>
+                            <br>
+                            <div id="sportsOptions" style="display: none;">
+                              <label><input type="checkbox" name="hobby" value="Basketball">Basketball</label>
+                              <label><input type="checkbox" name="hobby" value="Soccer">Soccer</label>
+                              <label><input type="checkbox" name="hobby" value="Tennis">Tennis</label>
+                              <label><input type="checkbox" name="hobby" value="Gym">Gym</label>
+                            </div>
+                          
+                            
+                            <input type="checkbox" id="videoGamesCheckbox" name="hobbyCategory" value="Video Games" onchange="showHobbyOptions('videoGamesOptions')">
+                            <label for="videoGamesCheckbox"><h6>Video Games</h6></label>
+                            <br>
+                            <div id="videoGamesOptions" style="display: none;">
+                              <label><input type="checkbox" name="hobby" value="Action">Action</label>
+                              <label><input type="checkbox" name="hobby" value="Adventure">Adventure</label>
+                              <label><input type="checkbox" name="hobby" value="Simulation">Simulation</label>
+                              <label><input type="checkbox" name="hobby" value="Strategy">Strategy</label>
+                            </div>
+                          
+                            <input type="checkbox" id="musicCheckbox" name="hobbyCategory" value="Playing Music" onchange="showHobbyOptions('musicOptions')">
+                            <label for="musicCheckbox"><h6>Playing Music</h6></label>
+                            <br>
+                            <div id="musicOptions" style="display: none;">
+                              <label><input type="checkbox" name="hobby" value="Guitar">Guitar</label>
+                              <label><input type="checkbox" name="hobby" value="Piano">Piano</label>
+                              <label><input type="checkbox" name="hobby" value="Drums">Drums</label>
+                              <label><input type="checkbox" name="hobby" value="Singing">Singing</label>
+                            </div>
+                          
+                            <input type="checkbox" id="readingCheckbox" name="hobbyCategory" value="Reading" onchange="showHobbyOptions('readingOptions')">
+                            <label for="readingCheckbox"><h6>Reading</h6></label>
+                            <br>
+                            <div id="readingOptions" style="display: none;">
+                              <label><input type="checkbox" name="hobby" value="Fiction">Fiction</label>
+                              <label><input type="checkbox" name="hobby" value="Non-fiction">Non-fiction</label>
+                              <label><input type="checkbox" name="hobby" value="Comics">Comics</label>
+                              <label><input type="checkbox" name="hobby" value="Mystery">Mystery</label>
+                            </div>
+                          
+                            <input type="checkbox" id="boardGamesCheckbox" name="hobbyCategory" value="Board Games" onchange="showHobbyOptions('boardGamesOptions')">
+                            <label for="boardGamesCheckbox"><h6>Board Games</h6></label>
+                            <br>
+                            <div id="boardGamesOptions" style="display: none;">
+                              <label><input type="checkbox" name="hobby" value="Monopoly">Monopoly</label>
+                              <label><input type="checkbox" name="hobby" value="Chess">Chess</label>
+                              <label><input type="checkbox" name="hobby" value="Settlers of Catan">Settlers of Catan</label>
+                            </div>
+                          
+                            <input type="checkbox" id="magicCheckbox" name="hobbyCategory" value="Magic" onchange="showHobbyOptions('magicOptions')">
+                            <label for="magicCheckbox"><h6>Magic</h6></label>
+                            <br>
+                            <div id="magicOptions" style="display: none;">
+                              <label><input type="checkbox" name="hobby" value="Card Tricks">Card Tricks</label>
+                              <label><input type="checkbox" name="hobby" value="Coin Tricks">Coin Tricks</label>
+                              <label><input type="checkbox" name="hobby" value="Mentalism">Mentalism</label>
+                              <label><input type="checkbox" name="hobby" value="Illusions">Illusions</label>
+                            </div>
+                          
+                            <input type="checkbox" id="cookingCheckbox" name="hobbyCategory" value="Cooking" onchange="showHobbyOptions('cookingOptions')">
+                            <label for="cookingCheckbox"><h6>Cooking</h6></label>
+                            <br>
+                            <div id="cookingOptions" style="display: none;">
+                              <label><input type="checkbox" name="hobby" value="Baking">Baking</label>
+                              <label><input type="checkbox" name="hobby" value="Grilling">Grilling</label>
+                              <label><input type="checkbox" name="hobby" value="Sous Vide">Sous Vide</label>
+                              <label><input type="checkbox" name="hobby" value="Ethnic Cuisine">Ethnic Cuisine</label>
+                            </div>
+                          
+                            <input type="checkbox" id="scienceCheckbox" name="hobbyCategory" value="Science" onchange="showHobbyOptions('scienceOptions')">
+                            <label for="scienceCheckbox"><h6>Science</h6></label>
+                            <br>
+                            <div id="scienceOptions" style="display: none;">
+                              <label><input type="checkbox" name="hobby" value="Astronomy">Astronomy</label>
+                              <label><input type="checkbox" name="hobby" value="Biology">Biology</label>
+                              <label><input type="checkbox" name="hobby" value="Chemistry">Chemistry</label>
+                              <label><input type="checkbox" name="hobby" value="Physics">Physics</label>
+                            </div>
 <hr>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                  </form>
-              </div>
-          </div>
-                        
-        </section>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+
+
+
+
+
         <!-- Clients-->
         <div class="py-5">
             <div class="container">

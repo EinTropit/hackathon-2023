@@ -25,7 +25,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="index.html"><img src="./assets/img/voluntere.webp" class="w-10 h-10" alt="..." /></a>
+                <a class="navbar-brand" href="#page-top"><img src="./assets/img/voluntere.webp" class="w-10 h-10" alt="..." /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
@@ -33,17 +33,9 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#services">שירותים</a></li>
-                        <li class="nav-item"><a class="nav-link" href="login.html">התחבר</a></li>
-                        <li class="nav-item"><a class="nav-link" href="form.html">טופס קליטת ילדים</a></li>
-                        <li class="nav-item"><a class="nav-link" href="items.html">טופס דרישת חפצים</a></li>
-                        <li class="nav-item"><a class="nav-link" href="showcase.html">תרמו חפצים</a></li>
-                        <li class="nav-item"><a class="nav-link" href="volunteer.html">תאמו התנדבות</a></li>
-                        <li class="nav-item"><a class="nav-link" href="profile.html">פרופיל מתנדב</a></li>
-                        <!-- <li class="nav-item"><a class="nav-link" href="#about">עלינו</a></li>  todo: add about us -->
-                        <ul></ul>
-                        <ul></ul>
-                        <ul></ul>
-                        <ul></ul>
+                        <li class="nav-item"><a class="nav-link" href="#services">התחבר</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">הירשם</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">עלינו</a></li> <!-- todo: add about us -->
                         <li class="nav-item"><a class="nav-link" href="#team">הצוות שלנו</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">צור קשר</a></li>
                     </ul>
@@ -63,24 +55,25 @@
                 <div class="text-center" dir="ltr">
                     <form id="LogInForm">
                         <hr>
-                        <h1>Login</h1>
+                        <h1>Log In</h1>
                         <div class="content">
                           <div class="input-field">
-                            <input type="email" placeholder="Email" autocomplete="nope">
+                            <input type="text" id="name" placeholder="Name" autocomplete="nope">
                           </div>
                           <div class="input-field">
-                            <input type="password" placeholder="Password" autocomplete="new-password">
+                            <input type="password" id="password" placeholder="Password" autocomplete="new-password">
                           </div>
                           <a href="#" class="link">Forgot Your Password?</a>
                         </div>
+                        <br>
                         <div class="action">
-                          <button>Register</button>
-                          <button>Sign in</button>
+                          <button class="btn btn-primary">Register</button>
+                          <button class="btn btn-primary" onclick="login()">Sign in</button>
                         </div>
                       </form>
                 </div>
           
-                        
+               <!-- <img src="assets/img/volunteer.png" alt="My Image" class="image">-->
         
         <!-- Clients-->
         <div class="py-5">
@@ -177,5 +170,26 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+<script>
+    function login() {
+			// Get the entered username and password
+			var username = document.getElementById("name").value;
+			var password = document.getElementById("password").value;
+
+			// Check if the entered username and password match the ones defined ahead
+			if (username === "elad" && password === "1234") {
+				// Redirect to the home page or show a success message
+                
+				window.open("profile.html");
+			} else {
+				// Show an error message
+				alert("Incorrect username or password. Please try again.");
+			}
+		}
+</script>
+
+
     </body>
 </html>
+

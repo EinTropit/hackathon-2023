@@ -3282,10 +3282,22 @@ input[type="file"]{
 .dropdown-menu-end {
   --bs-position: end;
 }
+
 .dropdown-menu-end[data-bs-popper] {
   right: 0;
   left: auto;
 }
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h8 {
+  text-align: center;
+} 
 
 @media (min-width: 576px) {
   .dropdown-menu-sm-start {
@@ -10960,6 +10972,18 @@ header.masthead {
   background-position: center center;
   background-size: cover;
 }
+
+header.another-one {
+  padding-top: 10.5rem;
+  padding-bottom: 6rem;
+  text-align: center;
+  color: #fff;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+}
+
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
   font-style: italic;

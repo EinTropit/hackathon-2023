@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Page</title>
+    <script src="js/forms.js"></script>
+    
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+  </head>
+<body>
+    <div>
+    <form id="myForm" onsubmit="return validateForm()">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required>
+      
+        <label for="yearOfBirth">Year of Birth:</label>
+        <input type="number" id="yearOfBirth" name="yearOfBirth" min="1900" max="2023" required>
+      
+        <label for="currentHospital">Current Hospital:</label>
+        <select id="currentHospital" name="currentHospital" required>
+          <option value="">Please select a hospital</option>
+          <option value="hospitalA">Hospital A</option>
+          <option value="hospitalB">Hospital B</option>
+          <option value="hospitalC">Hospital C</option>
+        </select>
+      
+        <button type="submit">Submit</button>
+      </form>
+      </div>
+      <div>
+        <form id="hobbiesForm">
+            <h2>Hobbies</h2>
+          
+            <label for="sportsCheckbox">Sports</label>
+            <input type="checkbox" id="sportsCheckbox" name="hobbyCategory" value="Sports" onchange="showHobbyOptions('sportsOptions')">
+            <div id="sportsOptions" style="display: none;">
+              <label><input type="checkbox" name="hobby" value="Basketball">Basketball</label>
+              <label><input type="checkbox" name="hobby" value="Soccer">Soccer</label>
+              <label><input type="checkbox" name="hobby" value="Tennis">Tennis</label>
+              <label><input type="checkbox" name="hobby" value="Gym">Gym</label>
+            </div>
+          
+            <label for="videoGamesCheckbox">Video Games</label>
+            <input type="checkbox" id="videoGamesCheckbox" name="hobbyCategory" value="Video Games" onchange="showHobbyOptions('videoGamesOptions')">
+            <div id="videoGamesOptions" style="display: none;">
+              <label><input type="checkbox" name="hobby" value="Action">Action</label>
+              <label><input type="checkbox" name="hobby" value="Adventure">Adventure</label>
+              <label><input type="checkbox" name="hobby" value="Simulation">Simulation</label>
+              <label><input type="checkbox" name="hobby" value="Strategy">Strategy</label>
+            </div>
+          
+            <label for="musicCheckbox">Playing Music</label>
+            <input type="checkbox" id="musicCheckbox" name="hobbyCategory" value="Playing Music" onchange="showHobbyOptions('musicOptions')">
+            <div id="musicOptions" style="display: none;">
+              <label><input type="checkbox" name="hobby" value="Guitar">Guitar</label>
+              <label><input type="checkbox" name="hobby" value="Piano">Piano</label>
+              <label><input type="checkbox" name="hobby" value="Drums">Drums</label>
+              <label><input type="checkbox" name="hobby" value="Singing">Singing</label>
+            </div>
+          
+            <label for="readingCheckbox">Reading</label>
+            <input type="checkbox" id="readingCheckbox" name="hobbyCategory" value="Reading" onchange="showHobbyOptions('readingOptions')">
+            <div id="readingOptions" style="display: none;">
+              <label><input type="checkbox" name="hobby" value="Fiction">Fiction</label>
+              <label><input type="checkbox" name="hobby" value="Non-fiction">Non-fiction</label>
+              <label><input type="checkbox" name="hobby" value="Comics">Comics</label>
+              <label><input type="checkbox" name="hobby" value="Mystery">Mystery</label>
+            </div>
+          
+            <label for="boardGamesCheckbox">Board Games</label>
+            <input type="checkbox" id="boardGamesCheckbox" name="hobbyCategory" value="Board Games" onchange="showHobbyOptions('boardGamesOptions')">
+            <div id="boardGamesOptions" style="display: none;">
+              <label><input type="checkbox" name="hobby" value="Monopoly">Monopoly</label>
+              <label><input type="checkbox" name="hobby" value="Chess">Chess</label>
+              <label><input type="checkbox" name="hobby" value="Settlers of Catan">Settlers of Catan</label>
+            </div>
+          
+            <label for="magicCheckbox">Magic</label>
+            <input type="checkbox" id="magicCheckbox" name="hobbyCategory" value="Magic" onchange="showHobbyOptions('magicOptions')">
+            <div id="magicOptions" style="display: none;">
+              <label><input type="checkbox" name="hobby" value="Card Tricks">Card Tricks</label>
+              <label><input type="checkbox" name="hobby" value="Coin Tricks">Coin Tricks</label>
+              <label><input type="checkbox" name="hobby" value="Mentalism">Mentalism</label>
+              <label><input type="checkbox" name="hobby" value="Illusions">Illusions</label>
+            </div>
+          
+            <label for="cookingCheckbox">Cooking</label>
+            <input type="checkbox" id="cookingCheckbox" name="hobbyCategory" value="Cooking" onchange="showHobbyOptions('cookingOptions')">
+            <div id="cookingOptions" style="display: none;">
+              <label><input type="checkbox" name="hobby" value="Baking">Baking</label>
+              <label><input type="checkbox" name="hobby" value="Grilling">Grilling</label>
+              <label><input type="checkbox" name="hobby" value="Sous Vide">Sous Vide</label>
+              <label><input type="checkbox" name="hobby" value="Ethnic Cuisine">Ethnic Cuisine</label>
+            </div>
+          
+            <label for="scienceCheckbox">Science</label>
+            <input type="checkbox" id="scienceCheckbox" name="hobbyCategory" value="Science" onchange="showHobbyOptions('scienceOptions')">
+            <div id="scienceOptions" style="display: none;">
+              <label><input type="checkbox" name="hobby" value="Astronomy">Astronomy</label>
+              <label><input type="checkbox" name="hobby" value="Biology">Biology</label>
+              <label><input type="checkbox" name="hobby" value="Chemistry">Chemistry</label>
+              <label><input type="checkbox" name="hobby" value="Physics">Physics</label>
+            </div>
+          
+            <input type="submit" value="Submit">
+          </form>
+          
+      </div>
+<div>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h4>Sports</h4>
+            <button type="button" class="btn btn-primary" onclick="toggleSports()">Select</button>
+            <div id="sports" style="display:none">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="sports" value="Basketball">
+                <label class="form-check-label" for="basketball">Basketball</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="sports" value="Soccer">
+                <label class="form-check-label" for="soccer">Soccer</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="sports" value="Tennis">
+                <label class="form-check-label" for="tennis">Tennis</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <h4>Video Games</h4>
+            <button type="button" class="btn btn-primary" onclick="toggleVideoGames()">Select</button>
+            <div id="video-games" style="display:none">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="video-games" value="Minecraft">
+                <label class="form-check-label" for="minecraft">Minecraft</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="video-games" value="Fortnite">
+                <label class="form-check-label" for="fortnite">Fortnite</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="video-games" value="Roblox">
+                <label class="form-check-label" for="roblox">Roblox</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <h4>Playing Music</h4>
+            <button type="button" class="btn btn-primary" onclick="toggleMusic()">Select</button>
+            <div id="music" style="display:none">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="music" value="Guitar">
+                <label class="form-check-label" for="guitar">Guitar</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="music" value="Drums">
+                <label class="form-check-label" for="drums">Drums</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="music" value="Piano">
+                <label class="form-check-label" for="piano">Piano</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+      
+</div>
+
+</body>
+</html>

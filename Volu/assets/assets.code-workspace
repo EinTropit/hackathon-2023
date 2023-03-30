@@ -1,0 +1,29 @@
+{
+	"folders": [
+		{
+			"name": "assets",
+			"path": "."
+		},
+		{
+			"name": "Volu",
+			"path": "../Volu"
+		},
+		{
+			"name": "js",
+			"path": "../js"
+		},
+		{
+			"name": "css",
+			"path": "../css"
+		},
+		{
+			"name": ".idea",
+			"path": "../../PycharmProjects/pythonProject/.idea"
+		},
+		{
+			"name": "node_modules",
+			"path": "../../Desktop/bank/test/node_modules"
+		}
+	],
+	"settings": {}
+}

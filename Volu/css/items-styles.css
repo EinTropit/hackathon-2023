@@ -1,0 +1,44 @@
+
+/* Define the grid layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* Style each grid cell */
+.grid-item {
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the category name and logo */
+.category-name {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.category-logo {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+/* Style the expanded category container */
+.category-expanded {
+  display: none;
+  background-color: #fff;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Show the expanded category container when its parent is clicked */
+.grid-item.active .category-expanded {
+  display: block;
+}

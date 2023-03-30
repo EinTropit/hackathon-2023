@@ -26,12 +26,12 @@ const lastRow = formContainer.lastElementChild;
         // Update the IDs of the new row's form elements to be unique
         const newRowId = `row-${rowCount + 1}`;
         newRow.id = newRowId;
-        newRow.querySelector(".category-select").id = `category-select-${rowCount + 1}`;
-        newRow.querySelector(".item-input").id = `item-input-${rowCount + 1}`;
+        newRow.querySelector(".item-name").id = `item-name-${rowCount + 1}`;
+        newRow.querySelector(".amount").id = `amount-${rowCount + 1}`;
 
         // Clear the value of the new row's item input
-        newRow.querySelector(".item-input").value = "";
-
+        newRow.querySelector(".item-name").value = "";
+        newRow.querySelector(".amount").value = "";
         // Append the new row to the form
         formContainer.appendChild(newRow);
 

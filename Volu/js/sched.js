@@ -31,7 +31,7 @@ function openPopup() {
   popup.document.write("<form>");
   popup.document.write("<label for='name'>Name:</label><br>");
   popup.document.write("<input type='text' id='name' name='name'><br><br>");
-  popup.document.write("<label for='availability'>Availability:</label><br>");
+  popup.document.write("<label for='availability'>Hour range:</label><br>");
   popup.document.write("<input type='text' id='availability' name='availability'><br><br>");
   popup.document.write("<label for='profession'>Profession:</label><br>");
   popup.document.write("<input type='text' id='profession' name='profession'><br><br>");

@@ -8142,7 +8142,10 @@ textarea.form-control-lg {
 
 .bg-primary {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+  background-color: #FFD333;
+  
+  
+  /* /background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;/ */
 }
 
 .bg-secondary {
@@ -8152,7 +8155,10 @@ textarea.form-control-lg {
 
 .bg-success {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important;
+  background-color: #ffc800;
+  
+  
+ /* background-color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important;*/
 }
 
 .bg-info {
@@ -8162,12 +8168,15 @@ textarea.form-control-lg {
 
 .bg-warning {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-warning-rgb), var(--bs-bg-opacity)) !important;
+  background-color: #E6B400;
+  
+ /* background-color: rgba(var(--bs-warning-rgb), var(--bs-bg-opacity)) !important;*/
 }
 
 .bg-danger {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-danger-rgb), var(--bs-bg-opacity)) !important;
+  background-color: #CCA000;
+ /* background-color: rgba(var(--bs-danger-rgb), var(--bs-bg-opacity)) !important;*/
 }
 
 .bg-light {
@@ -11369,4 +11378,27 @@ section#contact form#contactForm :-ms-input-placeholder {
   transform: scale(1.1);
 }
 
-/* end of showcase styles*/
+.elad {
+  width: 100%;
+  height: 100%;
+}
+
+.bg-black {
+  background: #000;
+}
+
+.skill-block {
+  width: 25%;
+}
+
+@media (min-width: 991px) and (max-width:1200px) {
+  .skill-block {
+    padding: 32px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .skill-block {
+    padding: 56px !important;
+  }
+}

@@ -62,17 +62,17 @@
                         <h1>Log In</h1>
                         <div class="content">
                           <div class="input-field">
-                            <input type="text" id="name" placeholder="Name" autocomplete="nope">
+                            <input type="text" id="name" dir="rtl" placeholder="שם" autocomplete="nope">
                           </div>
                           <div class="input-field">
-                            <input type="password" id="password" placeholder="Password" autocomplete="new-password">
+                            <input type="password" id="password" dir="rtl" placeholder="סיסמה" autocomplete="new-password">
                           </div>
-                          <a href="#" class="link">Forgot Your Password?</a>
+                          <a href="#" class="link">?שכחת סיסמה</a>
                         </div>
                         <br>
                         <div class="action">
-                          <button class="btn btn-primary">Register</button>
-                          <button class="btn btn-primary" onclick="login()">Sign in</button>
+                          <button class="btn btn-primary" onclick="register()">הרשמה</button>
+                          <button class="btn btn-primary" onclick="login()">התחברות</button>
                         </div>
                       </form>
                 </div>
@@ -183,10 +183,11 @@
 			// Check if the entered username and password match the ones defined ahead
             if (username === "elad" && password === "1234") {
 				// Redirect to the home page or show a success message
-                
+                document.cookie = "cookieName=cookieValue; expires=Thu, 31 Dec 2099 23:59:59 GMT; path=/";
 				window.open("profile.html");
 			} else 
             if (username=== "amir" && password === "1111") {
+                document.cookie = "cookieName=cookieValue; expires=Thu, 31 Dec 2099 23:59:59 GMT; path=/";
                 window.open("showcase.html");
             }
             else 
@@ -194,6 +195,9 @@
 				alert("Incorrect username or password. Please try again.");
 			}
 		}
+    function register(){
+        window.open("VolunteerRegistration.html");
+    }
 </script>
 
 

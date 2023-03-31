@@ -26,6 +26,8 @@
         <script src="js/forms.js"></script>
     </head>
     <body id="page-top">
+      <script src="js/volunteer.js"></script>
+
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
@@ -69,7 +71,7 @@
                           <h2> מלא בבקשה את הפרטים על ילדיך</h2>
                             <hr>
                             <label for="text">:שם מלא</label>
-                            <input id="fullName" type="text" dir= "rtl" placeholder="הכנס שם" name="name" required>
+                            <input id="fullName" type="text" dir= "rtl" placeholder="הכנס שם" name="name" required><br>
                             <label for="yearOfBirth">:שנת לידה</label>
                             <select name="years" id="yearOfBirth">
                                <option value="chooseyear" dir="rtl">בחר</option> 
@@ -94,7 +96,10 @@
                                 <option value="2008" dir="rtl">2008</option>
                                 <option value="2009" dir="rtl">2009</option>
                                 <option value="2010" dir="rtl">2010</option>
-                              </select>
+                              </select><br>
+
+                              
+
                             <label for="current-hospital">:בית חולים נוכחי</label>
                             <select id="current-hospital" name="current-hospital">
                               <option dir="rtl" value="Ruth">בחר</option>
@@ -249,7 +254,7 @@
                           <label class="btn btn-secondary" for="option74">פיזיקה</label>
                         </div>
                     </hr>
-                        <button type="submit" class="btn btn-primary" onclick="">Submit</button>
+                        <button type="submit" class="btn btn-primary" onclick="endregister()">Submit</button>
                   </form>
               </div>
           </div>

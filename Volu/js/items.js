@@ -1,121 +1,46 @@
-import { initializeApp } from 'firebase/app';
-
-(function() {
-  var firebaseConfig = {
-      apiKey: "AIzaSyDGPeD5wV5FThb0mO0n6jcYvruF9XwmYQ0",
-      authDomain: "volu-30e9a.firebaseapp.com",
-      projectId: "volu-30e9a",
-      storageBucket: "volu-30e9a.appspot.com",
-      messagingSenderId: "12096235857",
-      appId: "1:12096235857:web:3028849510b190243acb70",
-      measurementId: "G-BZG3RK5ZS1"
-  };
-
-firebase.initializeApp(firebaseConfig);
-
-var push_to_firebase = function(data){
-  var db = firebase.firestore();
-
-  db.collection("items").add({
-      name: data["name"],
-      amount: data["amount"]
-  })
-  .then(function(docRef) {
-      console.log("Submission sent, ID: ", docRef.id);
-      location.reload();
-  })
-  .catch(function(error) {
-      alert("Submission could not be sent: ");
-  });
-}
-
-var contact_submit = function(){
-  var name = document.getElementById("item-name-1");
-  var amount = document.getElementById("amount-1");
-
-  var data = {
-    "name": name.value,
-    "amount": amount.value,
-  }
-
-  console.log(data);
-  push_to_firebase(data);
-  alert("You successfully sent us your item requests!");
-
-}
-document.addEventListener("DOMContentLoaded", function() {
-  // Your code that depends on the submit button goes here
-  document.getElementById("submit").addEventListener("click", contact_submit);
-});
-})();
+// import { initializeApp } from 'firebase/app';
 
 // (function() {
 //   var firebaseConfig = {
-//     apiKey: "AIzaSyDGPeD5wV5FThb0mO0n6jcYvruF9XwmYQ0",
-//     authDomain: "volu-30e9a.firebaseapp.com",
-//     projectId: "volu-30e9a",
-//     storageBucket: "volu-30e9a.appspot.com",
-//     messagingSenderId: "12096235857",
-//     appId: "1:12096235857:web:3028849510b190243acb70",
-//     measurementId: "G-BZG3RK5ZS1"
-// };
+//       apiKey: "AIzaSyDGPeD5wV5FThb0mO0n6jcYvruF9XwmYQ0",
+//       authDomain: "volu-30e9a.firebaseapp.com",
+//       projectId: "volu-30e9a",
+//       storageBucket: "volu-30e9a.appspot.com",
+//       messagingSenderId: "12096235857",
+//       appId: "1:12096235857:web:3028849510b190243acb70",
+//       measurementId: "G-BZG3RK5ZS1"
+//   };
 
 // firebase.initializeApp(firebaseConfig);
 
-// var push_to_firebase = function(){
+// var push_to_firebase = function(data){
 //   var db = firebase.firestore();
-//   const dbRef = collection(db, "items");
 
-//   const formContainer = document.getElementById("form-container");
-//   const rows = formContainer.querySelectorAll(".form-row");
-//   var itemName = "";
-
-//   for (i=0 ; i < rows.length; i++) {
-//     const itemName = rows[i].querySelector("#item-name-"+(i+1));
-//     const itemAmount = rows[i].querySelector("#amount-"+(i+1));
-//     console.log(itemName.value);
-//     console.log(itemAmount.value);
-    
-//     const myForm = document.getElementById("myForm");
-    
-//     if (myForm.checkValidity()) {
-//       alert("before db entry");
-//       console.log("item: ", itemName.value);
-//         console.log("amount: ", itemAmount.value);
-//         alert("BEFORE");
-//         db.collection("items").add({
-//           name: itemName.value,
-//           num: itemAmount.value
-//       })
-//       .then(function(docRef) {
-//         console.log("Submission sent, ID: ", docRef.id);
-//         alert("SUCCESS DB");
-//         // location.reload();
-//     })
-//     .catch(function(error) {
-//         alert("Submission could not be sent: ");
-//     });
-
-//     alert("DONE DB ENTRY");  
-
-
-//     } else {
-//       console.log('INVALID');
-//     } 
-//   }
-//   alert("DONE FOR");  
+//   db.collection("items").add({
+//       name: data["name"],
+//       amount: data["amount"]
+//   })
+//   .then(function(docRef) {
+//       console.log("Submission sent, ID: ", docRef.id);
+//       location.reload();
+//   })
+//   .catch(function(error) {
+//       alert("Submission could not be sent: ");
+//   });
 // }
 
 // var contact_submit = function(){
-//   // var fullName = document.getElementById("fullName");
+//   var name = document.getElementById("item-name-1");
+//   var amount = document.getElementById("amount-1");
 
+//   var data = {
+//     "name": name.value,
+//     "amount": amount.value,
+//   }
 
-//   // var data = {
-//   //   "fullName": "Tony",
-//   //   "yearOfBirth": 3
-//   // }
-
-//   push_to_firebase();
+//   console.log(data);
+//   push_to_firebase(data);
+//   alert("You successfully sent us your item requests!");
 
 // }
 // document.addEventListener("DOMContentLoaded", function() {
@@ -123,8 +48,6 @@ document.addEventListener("DOMContentLoaded", function() {
 //   document.getElementById("submit").addEventListener("click", contact_submit);
 // });
 // })();
-
-
 
 let rowCount = 1;
 const MAX_ROWS = 10;

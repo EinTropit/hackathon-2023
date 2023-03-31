@@ -1,7 +1,6 @@
 //holds the relevant data for each day
 const dateInfo = [];
 
-let bySum = true;
 
 //an example
   const exampleHobbyDictsForEachDayCHILDREN = [
@@ -67,25 +66,28 @@ let bySum = true;
     { painting: 2, cycling: 4, dancing: 3 }
   ];
   const exampleHobbyDictsForEachDayVolunteers = [
-    { hiking: 5, reading: 3, cooking: 2 },
-    { hiking: 5, reading: 3, cooking: 2 },
-    { hiking: 5, reading: 3, cooking: 2 },
     { hiking: 2, painting: 4, dancing: 1 },
     { swimming: 3, cooking: 2, cycling: 4 },
     { reading: 6, gardening: 1, hiking: 2 },
+    { hiking: 2, painting: 4, dancing: 1 },{ hiking: 2, painting: 4, dancing: 1 },
+    { swimming: 3, cooking: 2, cycling: 4 },
+    { reading: 6, gardening: 1, hiking: 2 },
+    { hiking: 2, painting: 4, dancing: 1 },{ hiking: 2, painting: 4, dancing: 1 },
+    { swimming: 3, cooking: 2, cycling: 4 },
+    { reading: 6, gardening: 1, hiking: 2 },
+    { hiking: 2, painting: 4, dancing: 1 },{ hiking: 2, painting: 4, dancing: 1 },
+    { swimming: 3, cooking: 2, cycling: 4 },
+    { reading: 6, gardening: 1, hiking: 2 },
+    { hiking: 2, painting: 4, dancing: 1 },{ hiking: 2, painting: 4, dancing: 1 },
+    { swimming: 3, cooking: 2, cycling: 4 },
+    { reading: 6, gardening: 1, hiking: 2 },
+    { hiking: 2, painting: 4, dancing: 1 },{ hiking: 2, painting: 4, dancing: 1 },
+    { swimming: 3, cooking: 2, cycling: 4 },
+    { reading: 6, gardening: 1, hiking: 2 },
+    { hiking: 2, painting: 4, dancing: 1 },{ hiking: 2, painting: 4, dancing: 1 },
+    { swimming: 3, cooking: 2, cycling: 4 },
+    { reading: 6, gardening: 1, hiking: 2 },
     { hiking: 2, painting: 4, dancing: 1 },
-    { swimming: 3, cooking: 2, cycling: 4 },
-    { reading: 6, gardening: 1, hiking: 2 },{ hiking: 2, painting: 4, dancing: 1 },
-    { swimming: 3, cooking: 2, cycling: 4 },
-    { reading: 6, gardening: 1, hiking: 2 },{ hiking: 2, painting: 4, dancing: 1 },
-    { swimming: 3, cooking: 2, cycling: 4 },
-    { reading: 6, gardening: 1, hiking: 2 },{ hiking: 2, painting: 4, dancing: 1 },
-    { swimming: 3, cooking: 2, cycling: 4 },
-    { reading: 6, gardening: 1, hiking: 2 },{ hiking: 2, painting: 4, dancing: 1 },
-    { swimming: 3, cooking: 2, cycling: 4 },
-    { reading: 6, gardening: 1, hiking: 2 },{ hiking: 2, painting: 4, dancing: 1 },
-    { swimming: 3, cooking: 2, cycling: 4 },
-    { reading: 6, gardening: 1, hiking: 2 },{ hiking: 2, painting: 4, dancing: 1 },
     { swimming: 3, cooking: 2, cycling: 4 },
     { reading: 6, gardening: 1, hiking: 2 },{ hiking: 2, painting: 4, dancing: 1 },
     { swimming: 3, cooking: 2, cycling: 4 },
@@ -135,7 +137,9 @@ const today = new Date();
 let year = today.getFullYear();
 let month = today.getMonth();
 
-    
+goodThresh = 3;
+badThresh = 1;
+
 function prevMonth() {
     month--;
     if (month < 0) {
@@ -168,18 +172,20 @@ function getFirstDayOfMonth(year, month) {
 
 function determineColor(avg, sum){
     let points;
-    if(bySum ===true){
+    let bySum = localStorage.getItem("bySum");
+    if(bySum){
         points = sum;
+        
     }
     else{
-        points = avg;
+        
+        points = avg*100;
     }
     const colorGood ='#77db1f';
     const colorMod ='#fa9200';
     const colorBad ='#fa1616';
-    const goodThresh = 3;
-    const badThresh = 1;
-    if (points>= goodThresh){
+    
+    if (points >= goodThresh){
         color = colorGood;
         }
      else if(points>=badThresh){
@@ -251,9 +257,35 @@ function openPopup(day, sum, avg){
 
 }
 
+function changeSum() {
+    localStorage.setItem("bySum",true );
+}
+
+function changeAvg(){
+    localStorage.setItem("bySum", false);
+    
+}
+
+function apply(){
+    const upper = document.getElementById("upper").value;
+    const lower = document.getElementById("lower").value;
+    let bySum = localStorage.getItem("bySum");
+    if (bySum === false && (upper>100 || lower < 0)){
+        alert ('Thresholds not in valid range.');
+        return;
+    }
+    goodThresh = upper;
+    badThresh = lower;
+}
+
 
 
 function renderCalendar() {
+    let myData = localStorage.getItem("bySum");
+    if (myData === null){
+        myData = true;
+    }
+    alert(myData);
     const daysElement = document.querySelector('.days');
     const monthYearElement = document.querySelector('.month-year');
     daysElement.innerHTML = '';

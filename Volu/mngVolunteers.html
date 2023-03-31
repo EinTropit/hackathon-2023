@@ -56,7 +56,20 @@
                     <li class="list-group-item text-black" style ="background-color: goldenrod;">צהוב - כמה מתנדבים ביום זה</li>
                     <li class="list-group-item text-black"style ="background-color:green;">ירוק - מתנדבים רבים ביום זה</li>
                   </ul>
-                  
+                </br>
+                  <!--control-->
+                  <div class="text-center" style="margin-top: 50px;">
+                    <div dir="rtl" class="fs-3 text-uppercase text-dark">בקרת נתונים </div>
+                  </br>
+                    <button class="btn btn-primary btn-thirth" onclick="changeSum()">By Sum</button>
+                    <button class="btn btn-primary btn-thirth" onclick="changeAvg()">By Average</button>
+                    <form id="controlForm">
+                        <form id="chooseForm" class="my-form" onsubmit="return validateForm()">
+                        <input type="number" class="form-control" id="upper" placeholder="Upper Threshold" aria-label="Enter a number" aria-describedby="basic-addon2">
+                        <input type="number" class="form-control" id="lower" placeholder="Lower Threshold" aria-label="Enter a number" aria-describedby="basic-addon2">
+                        <button class="btn btn-primary btn-thirth">Apply changes</button>
+                  </form>
+              </div>
             </div>
         </header>
     <div class="calendar" style="height:300px; margin-bottom: 50px;">

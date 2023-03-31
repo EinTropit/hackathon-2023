@@ -1,54 +1,3 @@
-// import { initializeApp } from 'firebase/app';
-
-// (function() {
-//   var firebaseConfig = {
-//       apiKey: "AIzaSyDGPeD5wV5FThb0mO0n6jcYvruF9XwmYQ0",
-//       authDomain: "volu-30e9a.firebaseapp.com",
-//       projectId: "volu-30e9a",
-//       storageBucket: "volu-30e9a.appspot.com",
-//       messagingSenderId: "12096235857",
-//       appId: "1:12096235857:web:3028849510b190243acb70",
-//       measurementId: "G-BZG3RK5ZS1"
-//   };
-
-// firebase.initializeApp(firebaseConfig);
-
-// var push_to_firebase = function(data){
-//   var db = firebase.firestore();
-
-//   db.collection("items").add({
-//       name: data["name"],
-//       amount: data["amount"]
-//   })
-//   .then(function(docRef) {
-//       console.log("Submission sent, ID: ", docRef.id);
-//       location.reload();
-//   })
-//   .catch(function(error) {
-//       alert("Submission could not be sent: ");
-//   });
-// }
-
-// var contact_submit = function(){
-//   var name = document.getElementById("item-name-1");
-//   var amount = document.getElementById("amount-1");
-
-//   var data = {
-//     "name": name.value,
-//     "amount": amount.value,
-//   }
-
-//   console.log(data);
-//   push_to_firebase(data);
-//   alert("You successfully sent us your item requests!");
-
-// }
-// document.addEventListener("DOMContentLoaded", function() {
-//   // Your code that depends on the submit button goes here
-//   document.getElementById("submit").addEventListener("click", contact_submit);
-// });
-// })();
-
 let rowCount = 1;
 const MAX_ROWS = 10;
 function addRow() {
@@ -100,5 +49,6 @@ const rows = formContainer.querySelectorAll(".form-row");
     // remove the last row
     rows[rows.length - 1].remove();
   }
+
 
 }

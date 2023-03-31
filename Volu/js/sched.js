@@ -177,8 +177,22 @@ for (let key in dateInfo[day]) {
   listItem.appendChild(itemValue);
   modalContent.appendChild(listItem);
 }
+let button = document.createElement('button');
+button.classList.add('btn', 'btn-primary');
+button.setAttribute('onclick', 'displayMessage();');
+button.setAttribute('id', 'submitBtn');
+button.textContent = 'אשר התנדבות';
+modalContent.appendChild(button);
 
 }
+
+function displayMessage() {
+    var submitBtn = document.getElementById("submitBtn");
+  
+    submitBtn.style.display = "none";
+    alert("תודה! נהיה בקשר :)");
+
+  }
 
 function renderCalendar() {
     const daysElement = document.querySelector('.days');

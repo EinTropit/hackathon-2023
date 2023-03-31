@@ -8182,7 +8182,10 @@ textarea.form-control-lg {
 
 .bg-primary {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+  background-color: #FFD333;
+  
+  
+  /* /background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;/ */
 }
 
 .bg-secondary {
@@ -8192,7 +8195,10 @@ textarea.form-control-lg {
 
 .bg-success {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important;
+  background-color: #ffc800;
+  
+  
+ /* background-color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important;*/
 }
 
 .bg-info {
@@ -8202,12 +8208,15 @@ textarea.form-control-lg {
 
 .bg-warning {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-warning-rgb), var(--bs-bg-opacity)) !important;
+  background-color: #E6B400;
+  
+ /* background-color: rgba(var(--bs-warning-rgb), var(--bs-bg-opacity)) !important;*/
 }
 
 .bg-danger {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-danger-rgb), var(--bs-bg-opacity)) !important;
+  background-color: #CCA000;
+ /* background-color: rgba(var(--bs-danger-rgb), var(--bs-bg-opacity)) !important;*/
 }
 
 .bg-light {
@@ -11380,4 +11389,56 @@ section#contact form#contactForm :-ms-input-placeholder {
   text-align: center;
   font-size: 0.9rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+
+/* showcase styles ------------------------------------------------- */
+
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(4, 1fr);/**/
+  grid-gap: 10px;
+  justify-content: space-evenly; /* center horizontally */
+  align-content: space-evenly; /* center vertically */
+}
+
+.box {
+  flex-basis: 0; 
+  background-color: #ddd;
+  /*margin: 5px;/**/
+  flex: 1;
+  padding: 20px;/**/
+  text-align: center;
+  list-style-type: none;
+  transition: transform 0.3s ease;
+}
+
+.box:hover {
+  transform: scale(1.1);
+}
+
+.elad {
+  width: 100%;
+  height: 100%;
+}
+
+.bg-black {
+  background: #000;
+}
+
+.skill-block {
+  width: 25%;
+}
+
+@media (min-width: 991px) and (max-width:1200px) {
+  .skill-block {
+    padding: 32px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .skill-block {
+    padding: 56px !important;
+  }
 }

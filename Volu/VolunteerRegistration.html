@@ -5,16 +5,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Registration</title>
+        <title>Volu Sign Up</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
+        <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-firestore.js"></script>
+        
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <script src="js/forms.js"></script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -33,10 +38,8 @@
                         <li class="nav-item"><a class="nav-link" href="items.html">טופס דרישת חפצים</a></li>
                         <li class="nav-item"><a class="nav-link" href="showcase.html">תרמו חפצים</a></li>
                         <li class="nav-item"><a class="nav-link" href="volunteer.html">תאמו התנדבות</a></li>
-                        <li class="nav-item"><a class="nav-link" href="profile.html">פרופיל מתנדב</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.html#team">הצוות שלנו</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.html#contact">צור קשר</a></li>
-                        
                         <!-- <li class="nav-item"><a class="nav-link" href="#about">עלינו</a></li>  todo: add about us -->
                         <ul></ul>
                         <ul></ul>
@@ -60,10 +63,21 @@
                         <form id="myForm" onsubmit="return validateForm()">
                           <h1>הרשמת מתנדב</h1>
                             <hr>
-                            <label for="text">Name:</label>
-                            <input type="text" placeholder="Enter Name" name="name" required>
-                            <label for="yearOfBirth">Year of birth:</label>
+                            <label for="text">הכנס שם:</label>
+                            <input type="text" placeholder="הכנס שם" name="name" required>
+                            <label for="yearOfBirth">שנת לידה:</label>
                             <select name="years" id="yearOfBirth">
+                                <option value="1989">בחר שנה</option>
+                                <option value="1990">1990</option>
+                                <option value="1991">1991</option>
+                                <option value="1992">1992</option>
+                                <option value="1993">1993</option>
+                                <option value="1994">1994</option>
+                                <option value="1995">1995</option>
+                                <option value="1996">1996</option>
+                                <option value="1997">1997</option>
+                                <option value="1998">1998</option>
+                                <option value="1999">1999</option>
                                 <option value="2000">2000</option>
                                 <option value="2001">2001</option>
                                 <option value="2002">2002</option>
@@ -75,100 +89,154 @@
                                 <option value="2008">2008</option>
                                 <option value="2009">2009</option>
                                 <option value="2010">2010</option>
-                                <option value="2011">2011</option>
-                                <option value="2012">2012</option>
-                                <option value="2013">2013</option>
-                                <option value="2014">2014</option>
-                                <option value="2015">2015</option>
-                                <option value="2016">2016</option>
-                                <option value="2017">2017</option>
-                                <option value="2018">2018</option>
-                                <option value="2019">2019</option>
-                                <option value="2020">2020</option>
                               </select>
 
                             <h5>סמן את התחומים בהם תרצה להתנדב:</h5>
                       
-                        <br>
+
+                            <label for="sportsCheckbox"><h6>ספורט</h6></label>                        
                             <input type="checkbox" id="sportsCheckbox" name="hobbyCategory" value="Sports" onchange="showHobbyOptions('sportsOptions')">
-                            <label for="sportsCheckbox"><h6>Sports</h6></label>
                             <br>
                             <div id="sportsOptions" style="display: none;">
-                              <label><input type="checkbox" name="hobby" value="Basketball">Basketball</label>
-                              <label><input type="checkbox" name="hobby" value="Soccer">Soccer</label>
-                              <label><input type="checkbox" name="hobby" value="Tennis">Tennis</label>
-                              <label><input type="checkbox" name="hobby" value="Gym">Gym</label>
+                              <input type="checkbox" class="btn-check" name="options" id="option1" autocomplete="off" >
+                              <label class="btn btn-secondary" for="option1">טניס</label>
+                              
+                              <input type="checkbox" class="btn-check" name="options" id="option2" autocomplete="off">
+                              <label class="btn btn-secondary" for="option2">כדורגל</label>
+                              
+                              <input type="checkbox" class="btn-check" name="options" id="option3" autocomplete="off" >
+                              <label class="btn btn-secondary" for="option3">כדורסל</label>
+                              
+                              <input type="checkbox" class="btn-check" name="options" id="option4" autocomplete="off">
+                              <label class="btn btn-secondary" for="option4">בלט</label>
                             </div>
                           
                             
+                            <label for="videoGamesCheckbox"><h6>משחקי מחשב</h6></label>
                             <input type="checkbox" id="videoGamesCheckbox" name="hobbyCategory" value="Video Games" onchange="showHobbyOptions('videoGamesOptions')">
-                            <label for="videoGamesCheckbox"><h6>Video Games</h6></label>
                             <br>
                             <div id="videoGamesOptions" style="display: none;">
-                              <label><input type="checkbox" name="hobby" value="Action">Action</label>
-                              <label><input type="checkbox" name="hobby" value="Adventure">Adventure</label>
-                              <label><input type="checkbox" name="hobby" value="Simulation">Simulation</label>
-                              <label><input type="checkbox" name="hobby" value="Strategy">Strategy</label>
+                              <input type="checkbox" class="btn-check" name="options" id="option11" autocomplete="off" >
+                              <label class="btn btn-secondary" for="option11">אקשן</label>
+                              
+                              <input type="checkbox" class="btn-check" name="options" id="option12" autocomplete="off">
+                              <label class="btn btn-secondary" for="option12">הרפתקה</label>
+                              
+                              <input type="checkbox" class="btn-check" name="options" id="option13" autocomplete="off" >
+                              <label class="btn btn-secondary" for="option13">סימולציות</label>
+                              
+                              <input type="checkbox" class="btn-check" name="options" id="option14" autocomplete="off">
+                              <label class="btn btn-secondary" for="option14">אסטרטגיה</label>
                             </div>
                           
+                            <label for="musicCheckbox"><h6>נגינה</h6></label>
                             <input type="checkbox" id="musicCheckbox" name="hobbyCategory" value="Playing Music" onchange="showHobbyOptions('musicOptions')">
-                            <label for="musicCheckbox"><h6>Playing Music</h6></label>
                             <br>
                             <div id="musicOptions" style="display: none;">
-                              <label><input type="checkbox" name="hobby" value="Guitar">Guitar</label>
-                              <label><input type="checkbox" name="hobby" value="Piano">Piano</label>
-                              <label><input type="checkbox" name="hobby" value="Drums">Drums</label>
-                              <label><input type="checkbox" name="hobby" value="Singing">Singing</label>
+                              <input type="checkbox" class="btn-check" name="options" id="option21" autocomplete="off" >
+                              <label class="btn btn-secondary" for="option21">גיטרה</label>
+                              
+                              <input type="checkbox" class="btn-check" name="options" id="option22" autocomplete="off">
+                              <label class="btn btn-secondary" for="option22">פסנטר</label>
+                              
+                              <input type="checkbox" class="btn-check" name="options" id="option23" autocomplete="off" >
+                              <label class="btn btn-secondary" for="option23">תופים</label>
+                              
+                              <input type="checkbox" class="btn-check" name="options" id="option24" autocomplete="off">
+                              <label class="btn btn-secondary" for="option24">שירה</label>
                             </div>
                           
+                            <label for="readingCheckbox"><h6>קריאה</h6></label>
                             <input type="checkbox" id="readingCheckbox" name="hobbyCategory" value="Reading" onchange="showHobbyOptions('readingOptions')">
-                            <label for="readingCheckbox"><h6>Reading</h6></label>
                             <br>
                             <div id="readingOptions" style="display: none;">
-                              <label><input type="checkbox" name="hobby" value="Fiction">Fiction</label>
-                              <label><input type="checkbox" name="hobby" value="Non-fiction">Non-fiction</label>
-                              <label><input type="checkbox" name="hobby" value="Comics">Comics</label>
-                              <label><input type="checkbox" name="hobby" value="Mystery">Mystery</label>
+                              
+                              <input type="checkbox" class="btn-check" name="options" id="option31" autocomplete="off" >
+                              <label class="btn btn-secondary" for="option31">מדע בדיוני</label>
+                              
+                              <input type="checkbox" class="btn-check" name="options" id="option32" autocomplete="off">
+                              <label class="btn btn-secondary" for="option32">קומדיה</label>
+                              
+                              <input type="checkbox" class="btn-check" name="options" id="option33" autocomplete="off" >
+                              <label class="btn btn-secondary" for="option33">קומיקס</label>
+                              
+                              <input type="checkbox" class="btn-check" name="options" id="option34" autocomplete="off">
+                              <label class="btn btn-secondary" for="option34">מיסטורין</label>
                             </div>
                           
+                            <label for="boardGamesCheckbox"><h6>משחקי קופסה</h6></label>
                             <input type="checkbox" id="boardGamesCheckbox" name="hobbyCategory" value="Board Games" onchange="showHobbyOptions('boardGamesOptions')">
-                            <label for="boardGamesCheckbox"><h6>Board Games</h6></label>
                             <br>
                             <div id="boardGamesOptions" style="display: none;">
-                              <label><input type="checkbox" name="hobby" value="Monopoly">Monopoly</label>
-                              <label><input type="checkbox" name="hobby" value="Chess">Chess</label>
-                              <label><input type="checkbox" name="hobby" value="Settlers of Catan">Settlers of Catan</label>
+                              
+                              <input type="checkbox" class="btn-check" name="options" id="option41" autocomplete="off" >
+                              <label class="btn btn-secondary" for="option41">מונופול</label>
+                              
+                              <input type="checkbox" class="btn-check" name="options" id="option42" autocomplete="off">
+                              <label class="btn btn-secondary" for="option42">שחמט</label>
+                              
+                              <input type="checkbox" class="btn-check" name="options" id="option43" autocomplete="off" >
+                              <label class="btn btn-secondary" for="option43">קטאן</label>
+                              
+                              <input type="checkbox" class="btn-check" name="options" id="option44" autocomplete="off">
+                              <label class="btn btn-secondary" for="option44">דמקה</label>
                             </div>
                           
+                            <label for="magicCheckbox"><h6>קוסמות</h6></label>
                             <input type="checkbox" id="magicCheckbox" name="hobbyCategory" value="Magic" onchange="showHobbyOptions('magicOptions')">
-                            <label for="magicCheckbox"><h6>Magic</h6></label>
                             <br>
                             <div id="magicOptions" style="display: none;">
-                              <label><input type="checkbox" name="hobby" value="Card Tricks">Card Tricks</label>
-                              <label><input type="checkbox" name="hobby" value="Coin Tricks">Coin Tricks</label>
-                              <label><input type="checkbox" name="hobby" value="Mentalism">Mentalism</label>
-                              <label><input type="checkbox" name="hobby" value="Illusions">Illusions</label>
+                              
+                              <input type="checkbox" class="btn-check" name="options" id="option51" autocomplete="off" >
+                              <label class="btn btn-secondary" for="option51">קסמי קלפים</label>
+                              
+                              <input type="checkbox" class="btn-check" name="options" id="option52" autocomplete="off">
+                              <label class="btn btn-secondary" for="option52">קסמי מטבעות</label>
+                              
+                              <input type="checkbox" class="btn-check" name="options" id="option53" autocomplete="off" >
+                              <label class="btn btn-secondary" for="option53">קריאת מחשבות</label>
+                              
+                              <input type="checkbox" class="btn-check" name="options" id="option54" autocomplete="off">
+                              <label class="btn btn-secondary" for="option54">אשליות</label>
                             </div>
                           
+                            <label for="cookingCheckbox"><h6>בישול</h6></label>
                             <input type="checkbox" id="cookingCheckbox" name="hobbyCategory" value="Cooking" onchange="showHobbyOptions('cookingOptions')">
-                            <label for="cookingCheckbox"><h6>Cooking</h6></label>
                             <br>
                             <div id="cookingOptions" style="display: none;">
-                              <label><input type="checkbox" name="hobby" value="Baking">Baking</label>
-                              <label><input type="checkbox" name="hobby" value="Grilling">Grilling</label>
-                              <label><input type="checkbox" name="hobby" value="Sous Vide">Sous Vide</label>
-                              <label><input type="checkbox" name="hobby" value="Ethnic Cuisine">Ethnic Cuisine</label>
+                              
+                              <input type="checkbox" class="btn-check" name="options" id="option61" autocomplete="off" >
+                              <label class="btn btn-secondary" for="option61">אפייה</label>
+                              
+                              <input type="checkbox" class="btn-check" name="options" id="option62" autocomplete="off">
+                              <label class="btn btn-secondary" for="option62">צלייה</label>
+                              
+                              <input type="checkbox" class="btn-check" name="options" id="option63" autocomplete="off" >
+                              <label class="btn btn-secondary" for="option63">מרקים</label>
+                              
+                              <input type="checkbox" class="btn-check" name="options" id="option64" autocomplete="off">
+                              <label class="btn btn-secondary" for="option64">מטבח אתני</label>
                             </div>
                           
+                            <label for="scienceCheckbox"><h6>מדע</h6></label>
                             <input type="checkbox" id="scienceCheckbox" name="hobbyCategory" value="Science" onchange="showHobbyOptions('scienceOptions')">
-                            <label for="scienceCheckbox"><h6>Science</h6></label>
                             <br>
                             <div id="scienceOptions" style="display: none;">
-                              <label><input type="checkbox" name="hobby" value="Astronomy">Astronomy</label>
-                              <label><input type="checkbox" name="hobby" value="Biology">Biology</label>
-                              <label><input type="checkbox" name="hobby" value="Chemistry">Chemistry</label>
-                              <label><input type="checkbox" name="hobby" value="Physics">Physics</label>
+                              
+                              <input type="checkbox" class="btn-check" name="options" id="option71" autocomplete="off" >
+                              <label class="btn btn-secondary" for="option71">אסטרונומיה</label>
+                              
+                              <input type="checkbox" class="btn-check" name="options" id="option72" autocomplete="off">
+                              <label class="btn btn-secondary" for="option72">ביולוגיה</label>
+                              
+                              <input type="checkbox" class="btn-check" name="options" id="option73" autocomplete="off" >
+                              <label class="btn btn-secondary" for="option73">כימיה</label>
+                              
+                              <input type="checkbox" class="btn-check" name="options" id="option74" autocomplete="off">
+                              <label class="btn btn-secondary" for="option74">פיזיקה</label>
                             </div>
+                        </hr>
+                            
                             
                         <div class="image">
                             <label for="image">הוסף תמונת פרופיל:</label>

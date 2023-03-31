@@ -5,11 +5,12 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
     <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Volu Sign In</title>
+        <title>Volu</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -19,7 +20,6 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-        
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -33,8 +33,18 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#services">שירותים</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">התחבר</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">הירשם</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.html">התחבר</a></li>
+                        <li class="nav-item"><a class="nav-link" href="form.html">טופס קליטת לילדים</a></li>
+                        <li class="nav-item"><a class="nav-link" href="items.html">טופס דרישת חפצים</a></li>
+                        <li class="nav-item"><a class="nav-link" href="showcase.html">תרמו חפצים</a></li>
+                        <li class="nav-item"><a class="nav-link" href="volunteer.html">תאמו התנדבות</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="#about">עלינו</a></li>  todo: add about us -->
+                        <ul></ul>
+                        <ul></ul>
+                        <ul></ul>
+                        <ul></ul>
+                        <li class="nav-item"><a class="nav-link" href="#team">הצוות שלנו</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">צור קשר</a></li>
                     </ul>
                 </div>
             </div>
@@ -52,24 +62,25 @@
                 <div class="text-center" dir="ltr">
                     <form id="LogInForm">
                         <hr>
-                        <h1>Login</h1>
+                        <h1>Log In</h1>
                         <div class="content">
                           <div class="input-field">
-                            <input type="email" placeholder="Email" autocomplete="nope">
+                            <input type="text" id="name" placeholder="Name" autocomplete="nope">
                           </div>
                           <div class="input-field">
-                            <input type="password" placeholder="Password" autocomplete="new-password">
+                            <input type="password" id="password" placeholder="Password" autocomplete="new-password">
                           </div>
                           <a href="#" class="link">Forgot Your Password?</a>
                         </div>
+                        <br>
                         <div class="action">
-                          <button>Register</button>
-                          <button>Sign in</button>
+                          <button class="btn btn-primary">Register</button>
+                          <button class="btn btn-primary" onclick="login()">Sign in</button>
                         </div>
                       </form>
                 </div>
           
-                        
+               <!-- <img src="assets/img/volunteer.png" alt="My Image" class="image">-->
         
         <!-- Clients-->
         <div class="py-5">
@@ -81,7 +92,6 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
                 <!-- * * * * * * * * * * * * * * *-->
                 <!-- * * SB Forms Contact Form * *-->
@@ -166,5 +176,30 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+<script>
+    function login() {
+			// Get the entered username and password
+			var username = document.getElementById("name").value;
+			var password = document.getElementById("password").value;
+
+			// Check if the entered username and password match the ones defined ahead
+            if (username === "elad" && password === "1234") {
+				// Redirect to the home page or show a success message
+                
+				window.open("profile.html");
+			} else 
+            if (username=== "amir" && password === "1111") {
+                window.open("showcase.html");
+            }
+            else 
+            {				// Show an error message
+				alert("Incorrect username or password. Please try again.");
+			}
+		}
+</script>
+
+
     </body>
 </html>
+

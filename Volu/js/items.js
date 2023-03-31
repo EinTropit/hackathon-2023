@@ -1,4 +1,3 @@
-
 let rowCount = 1;
 const MAX_ROWS = 10;
 function addRow() {
